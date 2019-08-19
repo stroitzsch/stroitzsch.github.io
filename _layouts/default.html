@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    
+    {% seo %}
+    
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <meta name="viewport" content="width=device-width">
+    
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        
+        <a href="{{ site.github.url }}"> <h1 class="title">{{ site.title | default: site.github.repository_name }}</h1></a>
+        
+        <p>{{ site.description }}</p>
+        
+        <p><img class="profile" src="https://www.gravatar.com/avatar/9756efd0083078f4d9c19a563893bacb?s=170" alt="Sebastian Troitzsch"></p>
+
+        <p>
+          <a href="https://linkedin.com/in/stroitzsch/">[LinkedIn]</a> |
+          <a href="https://scholar.google.com/citations?user=GZ1R4VAAAAAJ">[Google Scholar]</a> |
+          <a href="https://www.researchgate.net/profile/Sebastian_Troitzsch">[ResearchGate]</a> |
+          <a href="https://sebastian.troitzs.ch/assets/files/CV.pdf">[CV]</a>
+        </p>
+        
+      </header>
+      <section>
+        
+        {{ content }}
+
+        <h2 id="contact">Contact</h2>
+        <form method="POST" action="https://formspree.io/{{ site.email }}">
+          <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="3" name="message" placeholder="Message"></textarea>
+          </div>
+          <div class="form-group">
+            <button  class="btn btn-primary" type="submit">Send Message</button>
+          </div>
+        </form>
+        
+      </section>
+      <footer>
+        
+        <p><small>Hosted on <a href="https://github.com/stroitzsch">GitHub</a> &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a><br>
+          Last updated on {{ site.time | date: "%-d %B %Y" }}</small></p>
+        
+      </footer>
+    </div>
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+
+  {% if site.google_analytics %}
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+  {% endif %}
+
+  </body>
+</html>
